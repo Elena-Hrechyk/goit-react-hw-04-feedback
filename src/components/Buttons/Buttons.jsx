@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Buttons.module.css';
 
-export const Buttons = ({ options, onClickButton }) => {
+export const Buttons = ({ options, onClick }) => {
   return (
     <ul className={css.list}>
       {options.map(button => {
@@ -11,7 +11,7 @@ export const Buttons = ({ options, onClickButton }) => {
               type="button"
               className={css.btn}
               onClick={() => {
-                onClickButton(button);
+                onClick(button);
               }}
             >
               {button}
