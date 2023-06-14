@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './TitleFeedback.module.css';
+import { Title } from './TitleFeedback.styled';
 
 export const TitleFeedback = ({ title }) => {
-  return <h2 className={css.title}>{title}</h2>;
+  return <Title>{title}</Title>;
 };
 
 TitleFeedback.prototype = {
