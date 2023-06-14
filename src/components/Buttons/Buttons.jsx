@@ -1,25 +1,24 @@
 import PropTypes from 'prop-types';
-import css from './Buttons.module.css';
+import { List, Item, Button } from './Buttons.styled';
 
 export const Buttons = ({ options, onClick }) => {
   return (
-    <ul className={css.list}>
+    <List>
       {options.map(button => {
         return (
-          <li className={css.item} key={button}>
-            <button
+          <Item key={button}>
+            <Button
               type="button"
-              className={css.btn}
               onClick={() => {
                 onClick(button);
               }}
             >
               {button}
-            </button>
-          </li>
+            </Button>
+          </Item>
         );
       })}
-    </ul>
+    </List>
   );
 };
 

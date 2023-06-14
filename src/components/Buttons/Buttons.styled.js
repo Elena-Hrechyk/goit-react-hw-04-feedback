@@ -1,17 +1,18 @@
-.list {
+import styled from '@emotion/styled';
+
+export const List = styled.ul`
   display: flex;
   grid-gap: 16px;
   width: 400px;
-
   align-items: center;
   margin-left: 40px;
-}
+`;
 
-.item {
+export const Item = styled.li`
   width: 75px;
-}
+`;
 
-.btn {
+export const Button = styled.button`
   display: block;
   width: 100%;
   padding-top: 4px;
@@ -25,12 +26,11 @@
   cursor: pointer;
   transition: background-color 250ms linear, color 250ms linear,
     box-shadow 250ms linear, border 250ms linear;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: rgb(42, 120, 165);
-  color: rgb(255, 255, 255);
-  box-shadow: 10px 5px 5px rgba(201, 200, 200, 0.541);
-  border: 1px solid rgb(42, 120, 165);
-}
+  &:hover,
+  &:focus {
+    background-color: rgb(42, 120, 165);
+    color: rgb(255, 255, 255);
+    box-shadow: 10px 5px 5px rgba(201, 200, 200, 0.541);
+    border: 1px solid rgb(42, 120, 165);
+  }
+`;
