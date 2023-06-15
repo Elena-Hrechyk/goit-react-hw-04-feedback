@@ -6,8 +6,6 @@ import { Statistic } from './Statistic/Statistic';
 import { Notification } from './Notification/Notification';
 
 const options = ['good', 'neutral', 'bad'];
-let total = 0;
-let positivePercentage = 0;
 
 export function App() {
   const [good, setGood] = useState(0);
@@ -19,15 +17,15 @@ export function App() {
   const clickButton = keyButton => {
     switch (keyButton) {
       case 'good':
-        setGood(good + 1);
+        setGood(state => state + 1);
         break;
 
       case 'neutral':
-        setNeutral(neutral + 1);
+        setNeutral(state => state + 1);
         break;
 
       case 'bad':
-        setBad(bad + 1);
+        setBad(state => state + 1);
         break;
 
       default:
@@ -35,12 +33,8 @@ export function App() {
     }
   };
 
-  useEffect(() => {
-    total = good + neutral + bad;
-    positivePercentage = Math.round((good / total) * 100);
-    console.log('total: ', total);
-    console.log('positivePercentage: ', positivePercentage);
-  }, [good, neutral, bad]);
+  const total = good + neutral + bad;
+  const positivePercentage = Math.round((good / total) * 100);
 
   return (
     <>
