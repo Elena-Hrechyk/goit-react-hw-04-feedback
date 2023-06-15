@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { TitleFeedback } from './TitleFeedback/TitleFeedback';
 import { Buttons } from './Buttons/Buttons';
 import { Section } from './Section/Section';
 import { Statistic } from './Statistic/Statistic';
 import { Notification } from './Notification/Notification';
 
-const options = ['good', 'neutral', 'bad'];
-
 export function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  // const [total, setTotal] = useState(0);
-  // const [positivePercentage, setPositivePercentage] = useState(0);
 
   const clickButton = keyButton => {
     switch (keyButton) {
@@ -35,6 +31,8 @@ export function App() {
 
   const total = good + neutral + bad;
   const positivePercentage = Math.round((good / total) * 100);
+
+  const options = ['good', 'neutral', 'bad'];
 
   return (
     <>
